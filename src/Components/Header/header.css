@@ -1,0 +1,10 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: blueviolet;
+    color: #FFF;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
