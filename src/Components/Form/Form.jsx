@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./form.css";
-import { useDispatch } from "react-redux";
-import { addUser } from "../../redux/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+// import { addUser } from "../../redux/userSlice";
+import { handleAddUser } from "../../redux/api";
 
 const Form = () => {
 
@@ -10,9 +11,11 @@ const Form = () => {
 
     const dispatch = useDispatch();
 
+    const {loading, error} = useSelector(state => state.user)
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addUser({ name, email }))
+        // dispatch(addUser({ name, email }))
+        handleAddUser({name, email}, dispatch)
     }
 
     return (
@@ -34,7 +37,7 @@ const Form = () => {
                         />
                     </div>
                     <div className="form-control">
-                        <input type="submit" value="add" />
+                        <input type="submit" value={loading? "loading...":"add"} />
                     </div>
                 </form>
             </section>

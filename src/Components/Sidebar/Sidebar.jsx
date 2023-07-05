@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import "./sidebar.css";
 
 const Sidebar = () => {
-    const { name } = useSelector(state => state.user)
+    const { name } = useSelector(state => state.user.userData)
 
     return (
         <>
