@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./form.css";
 import { useDispatch } from "react-redux";
-import { addUser } from "../../redux/userSlicer";
+import { addUser } from "../../redux/userSlice";
 
 const Form = () => {
 
